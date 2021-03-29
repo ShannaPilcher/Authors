@@ -28,7 +28,6 @@ module.exports = {
     update: (req,res) => {
         Author.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true})
             .then((updatedAuthor) => {
-                console.log(updatedAuthor)
                 res.json(updatedAuthor)
             })
             .catch((err) => {
@@ -52,7 +51,6 @@ module.exports = {
     delete: (req, res) => {
         Author.deleteOne({_id: req.params.id})
             .then((deletedAuthor) => {
-                console.log(deletedAuthor)
                 res.json(deletedAuthor)
             })
             .catch((err) => {
